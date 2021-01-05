@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ResourcesService } from '../services/resources.service';
 
 @Component({
   selector: 'app-resources',
@@ -8,8 +9,13 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class ResourcesComponent {
 
+  constructor(private resourcesService: ResourcesService) {
+  }
+
   search(searchCriteria: object): void {
-    console.log('search for', searchCriteria);
+    this.resourcesService.findAll().subscribe(result => {
+      console.log(result);
+    });
   }
 
 }
