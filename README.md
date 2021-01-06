@@ -1,27 +1,39 @@
 # FoleonResourcesFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+This is an Angular + TypeScript implementation of the Foleon assessment.
 
-## Development server
+## Configuration
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Set the `SEARCH_API_URL` variable in `src/environment/environment[.prod].ts`, so that it refers to the foleon backend application.
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Install npm dependencies
 
-## Build
+    ```sh
+    npm install
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Launch
 
-## Running unit tests
+### Develop
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Use the `start` script to launch the application in development mode
 
-## Running end-to-end tests
+    ```sh
+    npm start
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Release
 
-## Further help
+1. Use the `build` script to compile the application in production mode:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    ```sh
+    npm run build -- --prod
+    ```
+
+1. Use any server (e.g. `http-client-spa`) to serve the distribution:
+
+    ```sh
+    npx http-client-spa dist/foleon-resources-frontend
+    ```
