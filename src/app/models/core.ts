@@ -47,3 +47,12 @@ export interface FoleonListResponse<Name extends string, T> {
 export type ProjectListResponse = ProxyHttpResponse<FoleonListResponse<'title', FoleonProject>>;
 
 export type PublicationListResponse = ProxyHttpResponse<FoleonListResponse<'edition', FoleonPublication>>;
+
+export interface ResourceSearchParams {
+  q?: string;
+  page: string;
+}
+
+export interface PublicationSearchParams extends ResourceSearchParams {
+  projectId?: string;
+}
