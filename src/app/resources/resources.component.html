@@ -2,4 +2,14 @@
   <div class="mt-3">
     <app-search (search)="search($event)"></app-search>
   </div>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div *ngFor="let item of items$ | async" class="col mb-3">
+      <!-- <ng-container [ngSwitch]="item.type">
+        <app-card-project *ngSwitchCase="'project'" [project]="item"></app-card-project>
+        <app-card-publication *ngSwitchCase="'publication'" [publication]="item"></app-card-publication>
+      </ng-container> -->
+      <app-card-project *ngIf="item.type === 'project'" [project]="item"></app-card-project>
+      <app-card-publication *ngIf="item.type === 'publication'" [publication]="item"></app-card-publication>
+    </div>
+  </div>
 </div>

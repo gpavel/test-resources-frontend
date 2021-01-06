@@ -14,6 +14,7 @@ export class SearchComponent {
 
   searchForm = new FormGroup({
     search: new FormControl(''),
+    category: new FormControl('publications'),
   });
 
 }
